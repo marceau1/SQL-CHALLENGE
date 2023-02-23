@@ -9,7 +9,7 @@ SELECT first_name, last_name, hire_date
 FROM employees
 WHERE hire_date BETWEEN  '1986-01-01' AND '1986-12-31';
 
-
+--3
 SELECT departements.dept_no,
 	departements.dept_name,
 	employees.emp_no,
@@ -25,7 +25,7 @@ FROM employees
 	ON (departements.dept_no = dept_emp.dept_no)       
 WHERE titles.title = 'Manager';
 
-
+--4
 SELECT employees.emp_no,
 	   dept_emp.dept_no,
 	   employees.last_name,
@@ -37,11 +37,12 @@ FROM employees
 	INNER JOIN departements
 		ON (departements.dept_no = dept_emp.dept_no);
 	
-
+--5
 SELECT first_name, last_name, sex
 FROM employees
 WHERE first_name = 'Hercules' AND last_name LIKE 'B%';
 
+--6
 
 SELECT  employees.emp_no,
         employees.last_name,
@@ -55,7 +56,7 @@ FROM employees
 WHERE departements.dept_name = 'Sales'
 ORDER BY employees.emp_no;
 
-
+--7
 SELECT  employees.emp_no,
         employees.last_name,
         employees.first_name,
@@ -67,7 +68,7 @@ FROM employees
 		ON (departements.dept_no = dept_emp.dept_no)
 WHERE departements.dept_name IN ('Sales','Development');
 
-
+--8
 SELECT last_name, count(*)
 FROM employees
 GROUP BY last_name
